@@ -1,3 +1,3 @@
-# Qwen3.5-VL-2B-NPU
+# Qwen3.5-2B-NPU
 
-Comming this weekend
+Coming this weekend
