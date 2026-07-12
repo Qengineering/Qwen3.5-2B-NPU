@@ -117,9 +117,16 @@ $ cd ../include
 $ sudo cp ./*.h /usr/local/include
 ```
 
-Your rkllm model must match the library. If you use a model synthesized with the previous 1.2.3 rkllm library, and run it with the latest 1.3.0, you will get a malfunction. The internal Byte-Pair Encoding (BPE) dictionary parsing gets misaligned. 
+Your rkllm model must match the library.<br><br>
+<img width="818" height="219" alt="RK_OK2" src="https://github.com/user-attachments/assets/cabb346b-a9fa-4c4f-9b3e-1ff785ce45fd" /><br><br>
+If you use a model synthesized with the previous 1.2.3 rkllm library and run it with the latest 1.3.0, you will get a malfunction.<br>
+The internal Byte-Pair Encoding (BPE) dictionary parsing gets misaligned.<br><br>
+<img width="817" height="219" alt="RK_ERROR2" src="https://github.com/user-attachments/assets/bc9fad2a-8a1f-44f9-ab04-f834bb243f4c" />
+<br>
 
-### Download the LLM and VLM model.
+
+
+### Download the LLM and VLM models.
 The next step is downloading the models.<br>
 Both can be downloaded from our Hugging Face page.<br>
 - qwen3.5-2b-instruct_w8a8_rk3588.rkllm
