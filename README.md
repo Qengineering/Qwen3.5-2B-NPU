@@ -168,8 +168,8 @@ Here you set you context based on available memory.<br><br>
 **NewTokens**
 This sets the maximum number of tokens (pieces of text, typically sub-word units) that the model is allowed to generate in response to a prompt during a single inference round. For example, if set to 300, the model will not return more than 300 tokens as output, regardless of the prompt length. It is important for controlling generation length to avoid run-on responses and manage resource use.<br><br>
 **ContextLength (Dynamic KV Cache)**
-This specifies the maximum total number of tokens the model can hold in its memory at once, which includes the system prompt, the massive image/video embeddings, your text questions, and all previous generated answers.
-We have synthesized the models with a larger KV Cache than normally. Ours can hold up to 16384 tokens!
+This specifies the maximum total number of tokens the model can hold in its memory at once, which includes the system prompt, the massive image/video embeddings, your text questions, and all previous generated answers.<br>
+We have synthesized the models with a larger KV Cache than normally. Ours can hold up to **16384** tokens!
 * **For 32GB Boards (e.g., Rock 5C 32GB):** You can safely push the KV Cache to `8192` or `16384` to support processing long video sequences and maintaining deep, multi-turn conversations without the model forgetting the image.
 `RKLLM.LoadModel(vlm_model, llm_model, 2048, 16384);`
 

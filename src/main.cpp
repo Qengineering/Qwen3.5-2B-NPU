@@ -53,6 +53,7 @@ int main(int argc, char** argv)
 
         // Reminder: the user must input the correct tag (<image> or <video>) based on the mode!
         output_str = RKLLM.Ask(input_str);
+//        std::cout << "\nLLM Reply: " << output_str << std::endl;
     }
 
     return 0;
