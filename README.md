@@ -301,8 +301,7 @@ std::cout << "\nLLM Answer: " << output_str << std::endl;
 | ![Titanic_S](https://github.com/user-attachments/assets/bf6da76c-c9a4-41c6-bea1-2b4411dd4013) |**User**: \<image\>Which movie is this?<br>**Answer**: This image is from the 2017 film **Titanic**, directed by James Cameron.<br>The scene features Leonardo DiCaprio as Jack Dawson and Kate Winslet as Rose DeWitt Bukater standing on the bow of the ship *Titanic* during a dramatic sunset or sunrise. Their poses — arms outstretched, embracing tightly — capture the emotional climax of their romance aboard the sinking vessel. The warm lighting and ocean backdrop are iconic to this pivotal moment in the movie’s narrative.<br>While it could be mistaken for other romantic dramas like *The Notebook*, the specific costumes (19th-century style), the ship’s rigging, and the cinematic composition strongly point to Cameron’s adaptation of Stephenie Meyer’s novel.<br>✅ **Movie**: *Titanic* (2017)  <br>🎬 Director: James Cameron <br>💥 Iconic scene: Jack and Rose on the bow at sunset|
 
 ## Video example.
-![Sequence](https://github.com/user-attachments/assets/1e6af4e2-cdc4-4e22-868a-82e3df34fbb7)<br><br>
-
+![Sequence](https://github.com/user-attachments/assets/1e6af4e2-cdc4-4e22-868a-82e3df34fbb7)<br>
 **User**: \<video\> Describe the video.<br>
 **Answer**: The video captures a dynamic scene inside what appears to be a martial arts dojo or training hall, characterized by light blue padded walls adorned with framed calligraphy and posters. The floor is covered in large, green mats typical for such environments.
 
