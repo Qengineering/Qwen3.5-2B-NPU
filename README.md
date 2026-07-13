@@ -124,7 +124,6 @@ If you use a model synthesized with the previous 1.2.3 rkllm library and run it 
 <br>
 
 
-
 ### Download the LLM and VLM models.
 The next step is downloading the models.<br>
 Both can be downloaded from our Hugging Face page.<br>
@@ -302,7 +301,13 @@ std::cout << "\nLLM Answer: " << output_str << std::endl;
 | ![Titanic_S](https://github.com/user-attachments/assets/bf6da76c-c9a4-41c6-bea1-2b4411dd4013) |**User**: \<image\>Which movie is this?<br>**Answer**: This image is from the 2017 film **Titanic**, directed by James Cameron.<br>The scene features Leonardo DiCaprio as Jack Dawson and Kate Winslet as Rose DeWitt Bukater standing on the bow of the ship *Titanic* during a dramatic sunset or sunrise. Their poses — arms outstretched, embracing tightly — capture the emotional climax of their romance aboard the sinking vessel. The warm lighting and ocean backdrop are iconic to this pivotal moment in the movie’s narrative.<br>While it could be mistaken for other romantic dramas like *The Notebook*, the specific costumes (19th-century style), the ship’s rigging, and the cinematic composition strongly point to Cameron’s adaptation of Stephenie Meyer’s novel.<br>✅ **Movie**: *Titanic* (2017)  <br>🎬 Director: James Cameron <br>💥 Iconic scene: Jack and Rose on the bow at sunset|
 
 ## Video example.
-## LLM example.
+![Sequence](https://github.com/user-attachments/assets/1e6af4e2-cdc4-4e22-868a-82e3df34fbb7)<br><br>
+**User**: <video>Describe the video.<br><br>
+**Answer**: The video captures a dynamic scene inside what appears to be a martial arts dojo or training hall, characterized by light blue padded walls adorned with framed calligraphy and posters. The floor is covered in large, green mats typical for such environments.
+
+In the foreground, an individual dressed in dark traditional attire—likely a black top and pants—is captured mid-motion. They are executing a powerful, acrobatic kick, possibly a high roundhouse or spinning kick, which creates significant motion blur due to the speed of the movement. Their body is twisted, with one leg extended high into the air while their other arm reaches out for balance.
+
+In the background, another person wearing similar dark clothing stands upright near the wall, observing the action. This observer appears relatively still compared to the fast-moving practitioner. The overall atmosphere suggests a demonstration of martial arts skills, focusing on agility and technique within a controlled training space.## LLM example.
 Notice the nice Markdown makeup of the answer!<br><br>
 **User**: Can you make me a C++ call that embeds the Pythagorean theorem?<br><br>
 **Answer**: Certainly! Here’s a clean, modern C++ function that computes the length of the hypotenuse using the Pythagorean theorem: `a² + b² = c²`, so `c = √(a² + b²)`.
