@@ -155,7 +155,7 @@ $ make -j4
 The application switches dynamically between Single Image Mode and Video Sequence Mode based on how many image files you pass into the arguments.
 
 ```bash
-./VLM_VIDEO_NPU RKNN_model RKLLM_model file1.jpg [file2.jpg file3.jpg ...]
+./VLM_NPU RKNN_model RKLLM_model file1.jpg [file2.jpg file3.jpg ...]
 ```
 
 
@@ -170,12 +170,12 @@ In `main.cpp` you will find the line:<br>
 ```cpp
 RKLLM.LoadModel(vlm_model, llm_model, NewTokens, ContextLength);
 ```
-Here you set you context based on available memory.<br><br>
+Here you set your context based on available memory.<br><br>
 **NewTokens**
 This sets the maximum number of tokens (pieces of text, typically sub-word units) that the model is allowed to generate in response to a prompt during a single inference round. For example, if set to 300, the model will not return more than 300 tokens as output, regardless of the prompt length. It is important for controlling generation length to avoid run-on responses and manage resource use.<br><br>
 **ContextLength (Dynamic KV Cache)**
 This specifies the maximum total number of tokens the model can hold in its memory at once, which includes the system prompt, the massive image/video embeddings, your text questions, and all previous generated answers.<br>
-We have synthesized the models with a larger KV Cache than normally. Ours can hold up to **16384** tokens!
+We have synthesized the models with a larger KV Cache than normal. Ours can hold up to **16384** tokens!
 * **For 32GB Boards (e.g., Rock 5C 32GB):** You can safely push the KV Cache to `8192` or `16384` to support processing long video sequences and maintaining deep, multi-turn conversations without the model forgetting the image.
 `RKLLM.LoadModel(vlm_model, llm_model, 2048, 16384);`
 
@@ -188,16 +188,22 @@ We have synthesized the models with a larger KV Cache than normally. Ours can ho
 Single Image Mode:
 
 ```bash
-./VLM_VIDEO_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg 
+./VLM_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg 
 
 ```
 
 Video Sequence Mode (Passing multiple frames):
 
 ```bash
-./VLM_VIDEO_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg ./frame2.jpg ./frame3.jpg
+./VLM_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg ./frame2.jpg ./frame3.jpg
 
 ```
+##### ❗Showstopper❗
+To process video input, individual frames are first extracted. The VLM converts each frame into embeddings, which are then transformed into vision tokens.<br>
+Even on a desktop PC, this process places a heavy load on memory and CUDA resources. It’s therefore no surprise that the Rock 5C, with its more limited hardware, struggles even more.<br>
+Each vision token corresponds to about 200 tokens, strongly limiting the number of frames processed per video. Therefore, the video is subsampled, and evenly spaced frames are extracted for processing by Qwen3.5.<br>
+For reference, each vision token occupies around 20 MB of RAM — a detail worth keeping in mind when working on systems with limited memory.<br>
+Keep also in mind that after loading the models, each frame has to be tokenised, which takes about 0.9 seconds per frame.
 
 ## Using the app
 
