@@ -187,14 +187,14 @@ We have synthesized the models with a larger KV Cache than normal. Ours can hold
 Single Image Mode:
 
 ```bash
-./VLM_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg 
+./VLM_NPU ./models/qwen3.5-2b-vision_rk3588.rknn ./models/qwen3.5-2b_w8a8_rk3588.rkllm ./frame1.jpg 
 
 ```
 
 Video Sequence Mode (Passing multiple frames):
 
 ```bash
-./VLM_NPU ./models/qwen3-vl-2b-vision.rknn ./models/qwen3-vl-2b-instruct.rkllm ./frame1.jpg ./frame2.jpg ./frame3.jpg
+./VLM_NPU ./models/qwen3.5-2b-vision_rk3588.rknn ./models/qwen3.5-2b_w8a8_rk3588.rkllm ./frame1.jpg ./frame2.jpg ./frame3.jpg
 
 ```
 ##### ❗Showstopper❗
